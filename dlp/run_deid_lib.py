@@ -538,8 +538,8 @@ def generate_configs(config_text, input_query=None, input_table=None,
   try:
     cfg = json.loads(config_text, object_pairs_hook=collections.OrderedDict)
   except (TypeValue, ValueError):
-    logger.error('Unable to parse json for ordered dictionary.')
-    raise Exception('Invalid json dictionary.')
+    logger.error('Unable to parse json for config_text.')
+    raise Exception('Invalid dlp configuration.')
   if 'tagCategories' in cfg:
     mae_tag_categories = cfg['tagCategories']
   if 'keyColumns' in cfg:
